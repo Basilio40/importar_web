@@ -41,9 +41,12 @@ class TestDefaultSuite():
   
   def salvar_registro(self):
         with open(r'C:\Users\Sandro Bispo\Desktop\Documento.txt','a') as f:
-          f.write(self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[2]/div/div[1]/div[4]").text+'\n')
-          time.sleep(5)
-          self.driver.close()
+              try:
+                    f.write(self.driver.find_element_by_css_selector("html body div#main div.store-detail div.col-12 div.row div.col-sm-12.col-lg-6 div.personal-info address span").text+'\n')
+              except:
+                    f.write(self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[2]/div/div[1]/div[5]/address").text+'\n')
+        time.sleep(5)
+        self.driver.close()
 
   def fechar_modal(self):
         time.sleep(3)
@@ -51,6 +54,7 @@ class TestDefaultSuite():
             self.driver.find_element_by_xpath("/html/body/div[13]/div/div/button").click()
         except:
               pass
+
 
 TestDefaultSuite()
 
