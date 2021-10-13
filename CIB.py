@@ -32,3 +32,5 @@ TestDefaultSuite()
 # for k,e in enumerate()): 
 #     print(k,e.text)
 #     self.driver.find_elements_by_class_name("valor")
+
+# /html/body/main/div[3]/div/div/div[1]/div/p[2]
